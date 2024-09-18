@@ -192,7 +192,7 @@
   }
 }
 
-@media screen and (max-width: 446px) {
+@media screen and (max-width: 500px) {
   * {
     box-sizing: border-box;
     margin: 0;
@@ -202,6 +202,7 @@
     width: 85vw;
     padding-bottom: 30px;
     padding-top: 20px;
+    margin-bottom: 25px;
   }
   .tituloP1 {
     font-size: 38px;
