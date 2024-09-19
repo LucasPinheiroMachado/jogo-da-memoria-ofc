@@ -53,6 +53,11 @@ iniciar.addEventListener('click', function () {
   card11.remove();
   card12.remove();
 
+  const localizacaodascastasgame = document.querySelector('.animeGame');
+  if (window.innerWidth <= 1320) {
+    localizacaodascastasgame.style.left = '1.3vw';
+  }
+
   let i = 0;
   let v1 = 100;
   let v2 = 100;
