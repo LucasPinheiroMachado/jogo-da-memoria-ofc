@@ -31,10 +31,10 @@
 
 .tituloP1 {
   text-align: center;
-  font-size: 65px;
+  font-size: 55px;
   -webkit-text-stroke: 3px black;
   color: white;
-  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
 }
 .modoDeJogo {
@@ -52,12 +52,54 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.modoDeJogo:hover {
-  color: black;
-  text-shadow: none;
+/* Game */
+
+/* Estilo para o overlay */
+.overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* Cor preta sem ser totalmente opaca */
+  z-index: 9999; /* Elevado para garantir que fique acima de todos os outros elementos */
+  justify-content: center;
+  align-items: center;
+  pointer-events: all; /* Bloqueia interações com outros elementos */
 }
 
-/* Game */
+/* Estilo para a mensagem de loading */
+#loadingMessage {
+  font-size: 24px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  z-index: 10000; /* Garante que a mensagem fique visível acima de tudo */
+}
+
+/* Exemplo de animação de loading (opcional) */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#loadingMessage::before {
+  content: '';
+  display: block;
+  margin-bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border: 6px solid #fff;
+  border-top: 6px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
 #bodyAnime {
   background-color: rgb(254, 173, 22);
   overflow: hidden;
@@ -132,6 +174,9 @@
 }
 
 @media screen and (max-width: 1320px) {
+  .menu {
+    width: 70%;
+  }
   .card {
     margin-left: 0.6vw;
     margin-right: 0.3vw;
@@ -139,6 +184,9 @@
 }
 
 @media screen and (max-width: 1175px) {
+  .linha1 {
+    display: block; /* Força a quebra de linha */
+  }
   .controle {
     display: flex;
     justify-content: center;
@@ -170,6 +218,9 @@
 }
 
 @media screen and (max-width: 790px) {
+  .menu {
+    width: 60%;
+  }
   .tituloP1 {
     font-size: 40px;
     -webkit-text-stroke: 1px black;
@@ -192,7 +243,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 520px) {
   * {
     box-sizing: border-box;
     margin: 0;
@@ -205,7 +256,7 @@
     margin-bottom: 25px;
   }
   .tituloP1 {
-    font-size: 38px;
+    font-size: 33px;
     -webkit-text-stroke: 1px black;
   }
   .iniciarReiniciar {
