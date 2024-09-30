@@ -116,6 +116,7 @@
   height: 40px;
   position: relative;
   left: 2vw;
+  cursor: pointer;
 }
 
 .animeGame {
